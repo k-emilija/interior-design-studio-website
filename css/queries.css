@@ -1,0 +1,482 @@
+/**********************************/
+/*****📝 !IMPORTANT NOTES 📝*****/
+
+/* 
+I write:
+@media only screen and (max-width: rem) {
+} 
+
+instead of:
+@media (max-width: rem) {
+} 
+
+because it prevents older browsers that don't know about media queries from just using this style all the time*/
+
+/* 
+rem and em do NOT depend on html font-size in media queries -> 
+instead, 1rem = 1 em = 16px
+*/
+
+/*************************************/
+/*****📱 GENERAL BREAKPOINTS 📱*****/
+
+/* 
+Mobile breakpoint: 0 - 480px;
+
+Tablet breakpoint: 481px - 768px;
+
+Desktop (Small) Breakpoint: 769px - 1024px;
+
+Desktop (Large) Breakpoints: 1025px - up; 
+
+Media Queries should work well over of a range of at least 200-300px */
+
+/***********************************************/
+/***** ⬇️ MEDIA QUERIES - START BELOW ⬇️ *****/
+
+/**************************/
+/* BELOW  1344px (Smaller desktops) */
+/**************************/
+
+/* 1408 / 16 = 88;
+88 * 16 = 1408 */
+
+@media only screen and (max-width: 88rem) {
+  /* Navigation */
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+
+  /* About Section */
+  .text-box .heading-secondary {
+    margin-bottom: 4rem;
+  }
+
+  /* .text-box {
+    padding-right: 4rem;
+  } */
+  .text-container {
+    padding-right: 4rem;
+  }
+
+  /* Project height */
+  .project {
+    height: 52rem;
+  }
+
+  /* Services */
+  .card {
+    padding: 0 1rem;
+  }
+
+  .card-icon {
+    font-size: 6.2rem;
+    margin: 6rem 0 2rem 0;
+  }
+
+  .card-title {
+    margin-bottom: 6rem;
+  }
+
+  /* Testimonial */
+  .testimonial-text {
+    font-size: 1.4rem;
+  }
+
+  /* Modal Gallery */
+  .modal-window {
+    width: 75%;
+    height: 70%;
+  }
+}
+
+/**************************/
+/* BELOW  1280px (Landscape Tablets) */
+/**************************/
+
+/* 1280 / 16 = 80 */
+
+@media only screen and (max-width: 80rem) {
+  /* General */
+  body {
+    font-size: 1.4rem;
+  }
+
+  /* Hero */
+  .intro {
+    width: 57%;
+  }
+
+  .intro-heading {
+    font-size: 2.4rem;
+  }
+
+  /* About Section */
+  .about-container {
+    padding: 6rem 3.2rem;
+  }
+
+  .text-container {
+    max-height: 37rem;
+  }
+
+  /* PROJECT SWIPER*/
+
+  /* Overlay Desktop*/
+  .overlay-desktop {
+    display: none;
+  }
+
+  .project-slide .project .overlay-desktop {
+    display: none;
+  }
+
+  .project-slide .project:hover .overlay-desktop {
+    display: none;
+  }
+
+  /* Overlay Mobile and Tablets */
+  .overlay-mobile {
+    display: block;
+  }
+
+  /* Services */
+  .card-icon {
+    font-size: 6.2rem;
+    margin: 6rem 0 2rem 0;
+  }
+
+  .card-title {
+    margin-bottom: 6rem;
+  }
+
+  /* Testimonials */
+  .testimonial-name {
+    font-size: 1.6rem;
+  }
+
+  /* Modal Gallery */
+  .modal-window {
+    width: 75%;
+    height: 65%;
+  }
+}
+
+/**************************/
+/* BELOW  944px (Tablets) */
+/**************************/
+
+/* 940 / 16 = 58,75;
+59 * 16 = 944 */
+
+@media only screen and (max-width: 59rem) {
+  /* MOBILE NAVIGATION - START */
+
+  /* Shows the hidden navigation button when we reach this media querie. */
+  .btn-mobile-nav {
+    display: block;
+    z-index: 100;
+  }
+
+  /* Styling and creating the hidden mobile navigation. */
+
+  .main-nav {
+    background-color: rgba(58, 58, 60, 0.9);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    /* Header is the parent of the .main-nav class and will be positioned relative to this class. */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Navigation will occupy the whole screen. */
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in;
+
+    /* HIDE NAVIGATION */
+
+    /*  To hide navigation without display: none, we need to do several steps, because display: none doesn't allow any transitions. */
+
+    /* 1) Hide the element visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  /* .nav-open class will be added to the header in index.html */
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0%);
+  }
+
+  /* Only if the .nav-open class exists, it will SHOW the CLOSE icon. */
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  /* Only if the .nav-open class exists, it will HIDE the MENU icon. */
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 2.4rem;
+  }
+
+  /* MOBILE NAVIGATION - END */
+
+  /* Hero */
+  .gradient-overlay {
+    height: 30rem;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(58, 58, 60, 0) 0%,
+      rgba(58, 58, 60, 0.3) 20%,
+      rgba(58, 58, 60, 0.5) 30%,
+      rgba(58, 58, 60, 0.7) 50%,
+      rgba(58, 58, 60, 0.5) 60%,
+      rgba(58, 58, 60, 0.2) 100%
+    );
+  }
+
+  .intro {
+    width: 60%;
+    bottom: 9rem;
+  }
+
+  .logo-circle img {
+    bottom: 9rem;
+  }
+
+  /* About Section */
+
+  .about-content {
+    grid-template-columns: 1fr;
+    grid-gap: 4rem;
+  }
+
+  .about-container {
+    padding: 7.4rem 3.2rem 7.4rem 3.2rem;
+  }
+
+  /* .text-box {
+    padding-right: 0;
+    padding-bottom: 1rem;
+  } */
+
+  .text-container {
+    padding-right: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .scroll-text {
+    font-size: 1rem;
+  }
+
+  /* Services */
+  .card {
+    padding: 0 0.5rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  /* Testimonials */
+  .testimonial-container {
+    margin: 2rem 6rem 8rem 6rem;
+  }
+
+  /* Footer */
+  footer p {
+    font-size: 1.2rem;
+  }
+
+  /* Modal Gallery */
+  .modal-window {
+    width: 80%;
+    height: 70%;
+  }
+}
+
+/**************************/
+/* BELOW  704px (Smaller Tablets) */
+/**************************/
+
+/* 700 / 16 = 43.75;
+44 * 16 = 704 */
+
+@media only screen and (max-width: 44rem) {
+  /* Navigation */
+  .logo {
+    height: 4rem;
+  }
+
+  /* Hero */
+  .intro {
+    width: 85%;
+  }
+
+  .logo-circle img {
+    display: none;
+  }
+
+  /* Testimonials */
+  .testimonial-container {
+    margin: 2rem 4rem 8rem 4rem;
+    height: 30rem;
+  }
+
+  /* Services */
+  .services-cards {
+    margin: 4.4rem 0;
+  }
+
+  .card-icon {
+    margin: 0 0 2rem 0;
+  }
+
+  .card-title {
+    margin: 0;
+  }
+
+  .card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 3rem 0;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  /* Modal Gallery */
+  .modal-window {
+    width: 90%;
+    height: 65%;
+  }
+}
+
+/**************************/
+/* BELOW  544px (Phones) */
+/**************************/
+
+/* many phones are around 350-450px */
+
+/* 550 / 16 = 34,375;
+34 * 16 = 544 */
+
+@media only screen and (max-width: 34rem) {
+  /* General */
+  .heading-secondary {
+    font-size: 2rem;
+  }
+
+  /* Hero */
+  .intro-heading {
+    font-size: 2.2rem;
+  }
+
+  /* About Section */
+  .text-box .heading-secondary {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+  }
+
+  /* Testimonials */
+  .testimonial-container {
+    margin: 2rem 2rem 8rem 2rem;
+    padding: 2rem 3.2rem 2rem 3.2rem;
+    height: 36rem;
+  }
+
+  .testimonial-text {
+    font-size: 1.2;
+  }
+
+  /* Modal Gallery */
+  .modal-window {
+    width: 95%;
+    height: 65%;
+  }
+}
+
+/**************************/
+/* BELOW  352px (Smaller Phones) */
+/**************************/
+
+/* many phones are around from 360px */
+
+/* 368 / 16 = 22.5;
+23 * 16 = 368 */
+
+@media only screen and (max-width: 23rem) {
+  /* Testimonials */
+  .testimonial-container {
+    margin: 2rem 2rem 8rem 2rem;
+    padding: 2rem 2rem 2rem 2rem;
+    height: 44rem;
+  }
+
+  .testimonial-text {
+    font-size: 1.2rem;
+  }
+
+  .la-heart,
+  .la-star {
+    font-size: 2rem;
+    color: #af9d90;
+  }
+
+  /* Modal Gallery */
+  .modal-window {
+    width: 95%;
+    height: 50%;
+  }
+}
+
+/*  */
+/*  */
+/************************************************/
+/***** 🐛 Fixing Bugs in some browsers 🐛 *****/
+
+/**************************/
+/* FIXING FLEXBOX GAP */
+/**************************/
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+@media (max-width: 80em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+@media (max-width: 59em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
+}

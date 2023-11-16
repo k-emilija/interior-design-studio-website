@@ -1,0 +1,64 @@
+/* Global reset and activating border-box */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #333;
+  font-size: 1.6rem;
+  word-spacing: 0.5px;
+}
+
+/* Setting Root font-size */
+
+/* I want the default root font-size to be 10px, but in percents to respect user browser settings => 10px / 16px = 0.625 = 62.5%.
+
+With this method 1 rem which is by default 16px will become 10px => 16 * 0.0625 = 10 */
+
+/* Percentage of user's browser font-size setting */
+html {
+  font-size: 62.5%;
+
+  overflow-x: hidden;
+}
+
+/**************************/
+/* GENERAL COMPONENTS*/
+/**************************/
+
+.container {
+  max-width: 150rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+/* HEADINGS */
+
+.heading-background {
+  background-color: #3a3a3c;
+  padding: 2.4rem 0;
+}
+
+.heading-container {
+  max-width: 150rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+  background-color: #3a3a3c;
+  color: #fff;
+}
+
+.heading-secondary {
+  font-size: 2.6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.heading-tertiary {
+  font-size: 1.8rem;
+}

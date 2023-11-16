@@ -1,0 +1,420 @@
+/**************************/
+/* HEADER */
+/**************************/
+
+/* Main header and navigation is outside of a fixed container width. */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(58, 58, 60, 0.97);
+
+  /* For navigation to be sticky we need to set a fixed height. Usually we allow the content to define the height and then add some padding, but not in this case. */
+  height: 7.4rem;
+  /* Padding, but on the sides - space between the browser and the content. */
+  padding: 0 3.2rem;
+
+  /* Relative to the absolutely positioned navigation. */
+  position: relative;
+}
+
+.logo {
+  height: 4.4rem;
+  width: 8.6rem;
+}
+/* In media Queries height is:
+height: 4rem; at max-width: 44rem */
+
+/**************************/
+/* NAVIGATION */
+/**************************/
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #af9d90;
+}
+
+/* Mobile Navigation */
+
+.btn-mobile-nav {
+  border: none;
+  cursor: pointer;
+  background: none;
+
+  /* We show it in media queries, but make it hidden by default until we reach mobile size. */
+  display: none;
+}
+
+.icon-mobile-nav {
+  font-size: 4.4rem;
+  color: #fff;
+}
+
+/* We hide the close icon button and leave the default one visible. */
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/* Sticky Navigation */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 90;
+}
+
+/**************************/
+/* HERO SECTION */
+/**************************/
+
+.hero {
+  position: relative;
+}
+
+/* BILDE */
+.hero-background {
+  height: 100vh;
+  max-height: 100rem;
+  width: 100%;
+  background-image: url(/img/hero-img-opt.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* GRADIENTS */
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 24rem;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(58, 58, 60, 0) 0%,
+    rgba(58, 58, 60, 0.5) 50%,
+    rgba(58, 58, 60, 0.3) 100%
+  );
+}
+
+/* TEKSTS */
+.intro {
+  position: absolute;
+  bottom: 6rem;
+  /* left: 12rem; */
+  left: 3.2rem;
+  z-index: 10;
+
+  width: 50%;
+
+  color: #fff;
+  font-weight: 300;
+}
+
+.intro-heading {
+  font-size: 2.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.intro-text {
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+/* LOGO APLIS */
+.logo-circle img {
+  position: absolute;
+  bottom: 6rem;
+  /* right: 12rem; */
+  right: 3.2rem;
+  z-index: 10;
+
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100%;
+}
+
+/**************************/
+/* ABOUT SECTION */
+/**************************/
+
+.about-container {
+  max-width: 150rem;
+  padding: 8rem 3.2rem;
+  margin: 0 auto;
+  background-color: #fff;
+}
+/* In media Queries padding is:
+padding: 6rem 3.2rem; at max-width: 75rem
+padding: 4rem 3.2rem; at max-width: 59rem 
+*/
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5rem;
+}
+/* In media Queries grid-gap is:
+ grid-gap: 4rem at max-width: 59rem
+ grid-gap: 2rem at max-width: 34rem */
+
+/* TEXT */
+.text-box .heading-secondary {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-right: 8rem;
+}
+
+.scroll-text {
+  margin-bottom: 4rem;
+  color: #767676;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+/* In media Queries text-box padding-right is:
+padding-right: 4rem; at max-width: 88rem
+padding-right: 0; at max-width: 59rem
+*/
+
+.text-container {
+  padding-right: 8rem;
+  max-height: 44rem;
+  overflow-y: scroll;
+  transition: all 0.3s;
+}
+
+/* **** */
+.text-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.text-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.text-container::-webkit-scrollbar-thumb {
+  background: #9a9a9c;
+}
+
+.text-container::-webkit-scrollbar-thumb:hover {
+  background: #767676;
+}
+/* **** */
+
+.about-text {
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+.about-text:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+/* IMAGE */
+.about-content .right-image {
+  overflow: hidden;
+}
+
+.right-image {
+  display: flex;
+  justify-content: center;
+}
+
+.right-image img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+/* Instagram Link */
+
+.about-link:link,
+.about-link:visited {
+  color: #333;
+  transition: all 0.3s;
+}
+
+.about-link:hover,
+.about-link:active {
+  color: #767676;
+}
+
+/**************************/
+/* PROJECTS SECTION */
+/**************************/
+
+/* ❗I encountered bugs in my JavaScript code, so I resorted to using repeating classes. While I acknowledge it's not the best practice, as a junior developer, I saw this as a viable solution to address the issues. */
+
+/* BUTTONS */
+.swiper2 .swiper-button-prev::after,
+.swiper2 .swiper-button-next::after {
+  color: #fff;
+}
+
+/* PROJECT IMAGES */
+.project1 {
+  background-image: url(/img/1-dz-rigas-klusaja-centra/dz-kl-main.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.project2 {
+  background-image: url(/img/2-maja-balozos-titurga/titurga-main.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.project3 {
+  background-image: url(/img/3-klasika-rigas-centra/klasika-main.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.project4 {
+  background-image: url(/img/4-dzivojama-maja-marupe/marupe-main.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.project5 {
+  background-image: url(/img/5-gim-maja-marupe-rekonstrukcija/gim-m-main.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.project6 {
+  background-image: url(/img/6-neliela-maja-jelgava/jelgava-main.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.project7 {
+  background-image: url(/img/7-restorans-riviera/restorans-main.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.project8 {
+  background-image: url(/img/8-dz-vesturiska-eka-centrs/vesturiska-eka-main.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* PROJECT - General*/
+.project {
+  height: 62rem;
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* OVERLAY DESKTOP*/
+.overlay-desktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(58, 58, 60, 0.8);
+  color: #fff;
+
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  transition: all 0.8s;
+
+  transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  /* 1) Hide the element visually */
+  opacity: 0;
+  /* 2) Make it unaccessible to mouse and keyboard */
+  pointer-events: none;
+  /* 3) Hide it from screen readers */
+  visibility: hidden;
+}
+
+.project-slide .project .overlay-desktop {
+  transition: all 0.3s;
+}
+
+.project-slide .project:hover .overlay-desktop {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateY(-0%);
+  -moz-transform: translateY(-0%);
+  -webkit-transform: translateY(-0%);
+}
+
+/* OVERLAY TABLETS AND MOBILE*/
+.overlay-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(58, 58, 60, 0.8);
+  color: #fff;
+  box-shadow: rgba(128, 128, 128, 0.425) 0 0 1rem;
+
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  display: none;
+}
+
+/* OVERLAY CONTENT STYLE */
+.text-over {
+  padding: 3rem 3.2rem 2rem 3.2rem;
+}
+
+.btn-over {
+  color: #fff;
+  background-color: rgba(58, 58, 60, 0.9);
+  padding: 0.8rem 3.6rem 0.8rem 3.6rem;
+  margin: 0 2rem 2rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.btn-over:hover {
+  background-color: #fff;
+  color: rgba(58, 58, 60, 0.9);
+}
