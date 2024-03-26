@@ -14,6 +14,8 @@ Welcome to the README file for the Anna Mood Studio practice project! This repos
 - [Future Plans](#future-plans)
 - [Acknowledgements](#acknowledgements)
 
+## *Please note that the LOGO, FAVICON and IMAGES AEE COPYWRITED!*
+
 ## Introduction
 This project showcases the exceptional work done by the Anna Mood Studio practice projects team. Our goal was to create a visually stunning and responsive website that effectively presents Anna Mood Studio's portfolio, services, testimonials, about us, and contact sections. We aimed to accurately reflect the studio's unique style, aesthetic, and expertise, inviting visitors to explore and engage with the captivating world of Anna Mood Studio.
 
@@ -55,3 +57,5 @@ We would like to express our sincere gratitude to everyone who contributed to th
 ---
 
 Feel free to reach out to us if you have any questions or suggestions. Thank you for your interest in the Anna Mood Studio practice project!
+
+
